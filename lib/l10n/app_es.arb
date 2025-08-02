@@ -1,0 +1,19 @@
+{
+  "@@locale": "es",
+  "appTitle": "Demostración de Localización",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "homePageTitle": "Página de Inicio de Flutter Demo",
+  "@homePageTitle": {
+    "description": "The title of the home page"
+  },
+  "counterMessage": "Has presionado el botón esta cantidad de veces:",
+  "@counterMessage": {
+    "description": "Message shown above the counter"
+  },
+  "incrementTooltip": "Incrementar",
+  "@incrementTooltip": {
+    "description": "Tooltip for the increment button"
+  }
+}
