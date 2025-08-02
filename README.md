@@ -2,6 +2,11 @@
 
 This Flutter app demonstrates how to implement localization (internationalization) to support multiple languages.
 
+<img width="447" height="925" alt="image" src="https://github.com/user-attachments/assets/d72b58e2-45d3-42bc-9147-2c7be327cc83" />
+
+<img width="426" height="932" alt="image" src="https://github.com/user-attachments/assets/4e5bfcaf-6ffd-4a1c-b853-c3b5f2fc4ee5" />
+
+
 ## Features
 
 - **Multi-language Support**: The app supports English and Spanish
