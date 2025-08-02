@@ -6,6 +6,7 @@ This Flutter app demonstrates how to implement localization (internationalizatio
 
 <img width="426" height="932" alt="image" src="https://github.com/user-attachments/assets/4e5bfcaf-6ffd-4a1c-b853-c3b5f2fc4ee5" />
 
+Referenced by this youtube video https://www.youtube.com/watch?v=sWsjbwu_f8k
 
 ## Features
 
