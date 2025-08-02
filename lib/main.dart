@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'dart:ui' as ui;
 import 'l10n/app_localizations.dart';
 
 void main() {
@@ -13,8 +14,51 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   Locale _currentLocale = const Locale('en');
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    // Initialize with system locale
+    _currentLocale = _getSystemLocale();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+
+    // Check for iOS system language changes when app comes to foreground
+    if (state == AppLifecycleState.resumed) {
+      final newSystemLocale = _getSystemLocale();
+      if (newSystemLocale.languageCode != _currentLocale.languageCode) {
+        setState(() {
+          _currentLocale = newSystemLocale;
+        });
+      }
+    }
+  }
+
+  Locale _getSystemLocale() {
+    final systemLocales = ui.PlatformDispatcher.instance.locales;
+    if (systemLocales.isNotEmpty) {
+      final systemLocale = systemLocales.first;
+      // Check if the system locale is supported
+      if (systemLocale.languageCode == 'es') {
+        return const Locale('es');
+      } else {
+        return const Locale('en');
+      }
+    }
+    return const Locale('en');
+  }
 
   void _changeLanguage(Locale newLocale) {
     setState(() {

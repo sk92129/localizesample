@@ -7,6 +7,7 @@ This Flutter app demonstrates how to implement localization (internationalizatio
 - **Multi-language Support**: The app supports English and Spanish
 - **Automatic Language Detection**: The app automatically uses the system's language setting
 - **Manual Language Switching**: Users can manually switch languages using the profile icon in the app bar
+- **iOS System Language Detection**: Automatically detects and switches to the system language when the app comes back to the foreground on iOS
 - **Localized Strings**: All user-facing text is localized
 
 ## Supported Languages
@@ -32,14 +33,16 @@ The following strings are localized:
    - 🇪🇸 Español
 3. The app will immediately switch to the selected language
 
-### System Language Detection
-The app also automatically detects and uses your system's language setting:
+### iOS System Language Detection
+The app automatically detects system language changes on iOS:
 
-#### On iOS Simulator:
-1. Go to Settings > General > Language & Region
-2. Add Spanish to the list
-3. Drag Spanish to the top to make it the primary language
-4. Restart the app
+1. **Change your iOS system language** in Settings > General > Language & Region
+2. **Switch to another app** or go to the home screen
+3. **Return to this app** - it will automatically detect and switch to the new system language
+4. **No restart required** - the language change happens immediately when the app comes to foreground
+
+### System Language Detection (Other Platforms)
+The app also automatically detects and uses your system's language setting:
 
 #### On Android Emulator:
 1. Go to Settings > System > Languages & input > Languages
@@ -71,6 +74,7 @@ To add a new language:
 3. Add the translations to the new ARB file
 4. Update the `AppLocalizations` class to handle the new language
 5. Add a new `PopupMenuItem` in the language selection menu
+6. Update the `_getSystemLocale()` method to support the new language
 
 ## Adding New Strings
 
@@ -94,4 +98,4 @@ flutter pub get
 flutter run
 ```
 
-The app will automatically detect the system language and display the appropriate translations. You can also manually switch languages using the profile icon in the app bar.
+The app will automatically detect the system language and display the appropriate translations. You can also manually switch languages using the profile icon in the app bar. On iOS, the app will automatically detect system language changes when it comes back to the foreground.
