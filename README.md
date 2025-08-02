@@ -20,6 +20,7 @@ Referenced by this youtube video https://www.youtube.com/watch?v=sWsjbwu_f8k
 
 - **English (en)**: Default language
 - **Spanish (es)**: Spanish translations
+- **You can add more
 
 ## Localized Strings
 
